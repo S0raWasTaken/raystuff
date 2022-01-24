@@ -7,7 +7,7 @@ use raylib::{color::Color, core::drawing::RaylibDrawHandle, prelude::RaylibDraw}
 #[derive(Debug)]
 pub enum Error {
     Speed(String),
-    TxSend(SendError<()>)
+    TxSend(SendError<()>),
 }
 
 pub trait Coords {

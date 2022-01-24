@@ -1,6 +1,10 @@
-use std::{time::Instant, sync::mpsc::{channel, Receiver}, process::exit};
+use std::{
+    process::exit,
+    sync::mpsc::{channel, Receiver},
+    time::Instant,
+};
 
-use primitives::{Movement, Square, Error};
+use primitives::{Error, Movement, Square};
 use raylib::{color::Color, prelude::RaylibDraw};
 use tokio::spawn;
 
