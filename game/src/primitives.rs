@@ -19,7 +19,7 @@ pub trait Draw {
     fn draw(&self, handle: &mut RaylibDrawHandle);
 }
 
-#[derive(Coordinates)]
+#[derive(Coordinates, Debug)]
 pub struct Square {
     pub pos_x: i32,
     pub pos_y: i32,
@@ -39,6 +39,7 @@ impl Draw for Square {
     }
 }
 
+#[derive(Debug)]
 pub struct Movement<T> {
     pub object: T,
     pub speed_x: i8,
