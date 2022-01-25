@@ -46,7 +46,6 @@ async fn main() -> Result<(), Error> {
         player.tick(&mut draw_handle);
 
         tx.send(()).map_err(Error::TxSend)?;
-
     }
     exit(0);
 }
