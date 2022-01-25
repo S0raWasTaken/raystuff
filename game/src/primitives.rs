@@ -1,7 +1,7 @@
 #![allow(dead_code, non_camel_case_types)]
 use std::sync::mpsc::SendError;
 
-use game_macros::impl_coords;
+use game_macros::Coordinates;
 use raylib::{color::Color, core::drawing::RaylibDrawHandle, prelude::RaylibDraw};
 
 #[derive(Debug)]
@@ -19,6 +19,7 @@ pub trait Draw {
     fn draw(&self, handle: &mut RaylibDrawHandle);
 }
 
+#[derive(Coordinates)]
 pub struct Square {
     pub pos_x: i32,
     pub pos_y: i32,
@@ -26,9 +27,6 @@ pub struct Square {
     pub color: Color,
 }
 
-impl Coords for Square {
-    impl_coords!();
-}
 impl Draw for Square {
     fn draw(&self, handle: &mut RaylibDrawHandle) {
         handle.draw_rectangle(
