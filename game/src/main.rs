@@ -10,11 +10,11 @@ use tokio::spawn;
 
 mod primitives;
 
-#[tokio::main]
-async fn main() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let (mut ray_handle, thread) = raylib::init()
         .size(800, 600)
-        .title("formata essa desgraça direito porra")
+        .title("Game")
+        .msaa_4x()
         .build();
 
     let timing_zero = Instant::now();
